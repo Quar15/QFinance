@@ -16,5 +16,6 @@
     </head>
     <body>
         @include('_nav')
+        @yield('content')
     </body>
 </html>

@@ -16,3 +16,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+/* Only for logged in users */
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/stats', function () {
+    return view('stats');
+});
+
+Route::get('/history', function () {
+    return view('history');
+});
+
+
+/* Account */
+Route::get('/profile', function () {
+    return view('account/profile');
+});
+
+Route::get('/logout', function () {
+    return view('account/logout');
+});
