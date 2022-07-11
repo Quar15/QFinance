@@ -5,6 +5,10 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Models\Item;
+use App\Models\Category;
+use App\Models\User;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,11 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Item::truncate();
+        Category::truncate();
+        User::truncate();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Item::factory(30)->create();
     }
 }
