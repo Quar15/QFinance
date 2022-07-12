@@ -23,8 +23,8 @@ class ItemFactory extends Factory
         return [
             'user_id' => User::factory(),
             'category_id' => Category::factory(),
-            'title' => $this->faker->slug,
-            'value' => $this->faker->randomFloat()
+            'title' => $this->faker->words(3, true),
+            'value' => $this->faker->randomFloat(2, -1000, 1000)
         ];
     }
 }
