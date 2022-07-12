@@ -1,6 +1,7 @@
 <nav>
     <div class="menu">
         <h1 class="logo">QFinance</h1>
+        @auth
         <ul>
             <li>
                 <a href="/dashboard">
@@ -21,15 +22,27 @@
                 </a>
             </li>
         </ul>
+        @endauth
     </div>
 
     <div class="profile-box">
+        @auth
             <div class="profile">
                 <a href="/profile">
                     <img src="img/avatar300x300.jpeg">
-                    <h3>Nickname</h3>
+                    <h3>{{ auth()->user()->name }}</h3>
                 </a>
             </div>
-        <a href="/logout"><i class='bx bx-exit'></i></a>
+            <form method="POST" action="/logout" class="logout">
+                @csrf
+                <button type="submit"><i class='bx bx-exit'></i></button>
+            </form>
+        @else
+            @if (\Request::is('login'))
+                <a href="/register">Register</a>
+            @else
+                <a href="/login">Login</a>
+            @endif
+        @endauth
     </div>
 </nav>

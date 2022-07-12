@@ -1,0 +1,48 @@
+:root{
+    --error-color:#ce1f00;
+}
+
+.wrapper{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: var(--black-color);
+    color: var(--white-color);
+    padding: 50px;
+    border-radius: 13px;
+    width: 400px;
+}
+
+.wrapper h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrapper form,.wrapper form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper form input{
+    padding: 10px 15px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+.wrapper form .error{
+    color: var(--error-color);
+    font-size: 13px;
+}
+
+.wrapper form button{
+    margin-top: 20px;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    width: 150px;
+    font-size: 20px;
+}
