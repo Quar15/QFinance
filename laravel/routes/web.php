@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\AccountController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,26 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 /* Only for logged in users */
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::get('/stats', function () {
-    return view('stats');
-});
-
-Route::get('/history', function () {
-    return view('history');
-});
-
+Route::get('/dashboard', [ItemController::class, 'dashboard']);
+Route::get('/stats', [ItemController::class, 'stats']);
+Route::get('/history', [ItemController::class, 'history']);
 
 /* Account */
-Route::get('/profile', function () {
-    return view('account/profile');
-});
+Route::get('/profile', [AccountController::class, 'profile']);
+Route::get('/logout', [AccountController::class, 'logout']);
 
-Route::get('/logout', function () {
-    return view('account/logout');
-});
+Route::get('/login', [AccountController::class, 'login']);
+Route::get('/register', [AccountController::class, 'register']);
