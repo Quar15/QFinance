@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Item;
+use App\Models\User;
 
 class ItemController extends Controller
 {
@@ -13,9 +14,9 @@ class ItemController extends Controller
         return view('welcome');
     }
 
-    public function dashboard()
+    public function dashboard(User $user)
     {
-        $items = Item::latest()->with(['category'])->filter(request(['search', 'category']))->get();
+        $items = $user->items()->with(['category'])->filter(request(['search', 'category']))->get();
         $plus = 0;
         $minus = 0;
 

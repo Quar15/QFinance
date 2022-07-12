@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +23,17 @@ Route::get('/', function () {
 });
 
 /* Only for logged in users */
-Route::get('/dashboard', [ItemController::class, 'dashboard']);
-Route::get('/stats', [ItemController::class, 'stats']);
-Route::get('/history', [ItemController::class, 'history']);
+Route::get('/dashboard', [ItemController::class, 'dashboard'])->middleware('auth');
+Route::get('/stats', [ItemController::class, 'stats'])->middleware('auth');
+Route::get('/history', [ItemController::class, 'history'])->middleware('auth');
 
 /* Account */
-Route::get('/profile', [AccountController::class, 'profile']);
-Route::get('/logout', [AccountController::class, 'logout']);
+Route::get('/profile', [AccountController::class, 'profile'])->middleware('auth');
 
-Route::get('/login', [AccountController::class, 'login']);
-Route::get('/register', [AccountController::class, 'register']);
+Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
+Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
+
+Route::get('login', [SessionsController::class, 'create'])->middleware('guest')->name('login');
+Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
+
+Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
