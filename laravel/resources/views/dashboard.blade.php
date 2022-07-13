@@ -43,7 +43,7 @@
 
             @if( $items->count() > 0 )
                 @foreach($items as $item)
-                    <tr onclick="UpdateForm({{ $item->id }}, '/item/update', 'Edit', '{{ $item->title }}', {{ number_format($item->value, 2, '.', ' ') }}, {{ $item->category->id }})">
+                    <tr onclick="EditItem({{ $item->id }}, '/item/update', 'Edit', '{{ $item->title }}', {{ number_format($item->value, 2, '.', ' ') }}, {{ $item->category->id }})">
                         <td>{{ $item->title }}</td>
                         <td>{{ $item->category->name }}</td>
                         <td>{{ $item->created_at->format('d-m-Y') }}</td>
@@ -52,7 +52,7 @@
                 @endforeach
             @endif
         </table>
-        <button id="add-new-item" onclick="UpdateForm(-1, '/item/add', 'Add' , '', '')"><i class='bx bx-plus-medical'></i></button>
+        <button id="add-new-item" onclick="AddItem('/item/add', 'Add')"><i class='bx bx-plus-medical'></i></button>
     </main>
 
     <x-item-popup :categories="$categories" />

@@ -14,25 +14,30 @@
                     value="{{ old('title') }}"
                     required
             >
-
-            @error('name')
-                <p class="error">{{ $message }}</p>
-            @enderror
         </div>
-        <div>
-            <input  placeholder="Value"
-                    type="number"
-                    step="0.01"
-                    name="value"
-                    id="value"
-                    value="{{ old('value') }}"
-                    required
-            >
+        @error('title')
+            <p class="error">{{ $message }}</p>
+        @enderror
 
-            @error('name')
-                <p class="error">{{ $message }}</p>
-            @enderror
+        <div class="value-box">
+            <div class="symbol-box">
+                <div onclick="ChangeSymbol('-')" class="active" id="symbol-minus"><i class='bx bx-minus' ></i></div>
+                    <div onclick="ChangeSymbol('+')" id="symbol-plus"><i class='bx bx-plus'></i></div>
+            </div>
+            <div>
+                <input  placeholder="Value"
+                        type="number"
+                        step="0.01"
+                        name="value"
+                        id="value"
+                        value="{{ old('value') }}"
+                        required
+                >
+            </div>
         </div>
+        @error('number')
+                <p class="error">{{ $message }}</p>
+        @enderror
 
         <select name="category_id" id="category">
             @foreach ($categories as $cat)

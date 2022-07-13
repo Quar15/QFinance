@@ -76,6 +76,40 @@
     width: 100px;
 }
 
+.item-panel-popup form .value-box{
+    flex-direction: row;
+}
+
+.item-panel-popup form .value-box .symbol-box{
+    flex-direction: row;
+}
+
+.item-panel-popup form .value-box .symbol-box div{
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    padding: 0;
+    border-radius: 8px;
+    border: none;
+    margin: 0 10px 0 -5px;
+    background-color: var(--gray-color);
+    color: var(--black-color);
+}
+
+.item-panel-popup form .value-box .symbol-box div.active{
+    background-color: var(--green-color);
+}
+
+.item-panel-popup form .value-box .symbol-box div.active:hover{
+    background-color: var(--darker-green);
+    cursor: pointer;
+}
+
+.item-panel-popup form .value-box .symbol-box div:hover{
+    background-color: var(--dark-gray);
+    cursor: pointer;
+}
+
 .item-panel-popup form button{
     padding: 15px 25px;
     margin-top: 10px;

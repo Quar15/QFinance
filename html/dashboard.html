@@ -284,7 +284,7 @@
 
     
 
-    <div class="item-panel-popup" id="item-panel-popup">
+    <div class="item-panel-popup active" id="item-panel-popup">
         <div id="close-popup"><i class='bx bx-x' ></i></div>
         <h2>Edit</h2>
         <form action="/dashboard" method="POST">
@@ -297,19 +297,27 @@
                         value="{{ old('title') }}"
                         required
                 >
-                    <p class="error">{{ $message }}</p>
+                    
             </div>
-            <div>
-                <input  placeholder="Value"
-                        type="number"
-                        step="0.01"
-                        name="value"
-                        id="value"
-                        value="{{ old('value') }}"
-                        required
-                >
-                    <p class="error">{{ $message }}</p>
+            <p class="error">{{ $message }}</p>
+            
+            <div class="value-box">
+                <div class="symbol-box">
+                    <div onclick="ChangeSymbol('-')" class="active" id="symbol-minus"><i class='bx bx-minus' ></i></div>
+                    <div onclick="ChangeSymbol('+')" id="symbol-plus"><i class='bx bx-plus'></i></div>
+                </div>
+                <div>
+                    <input  placeholder="Value"
+                            type="number"
+                            step="0.01"
+                            name="value"
+                            id="value"
+                            value="{{ old('value') }}"
+                            required
+                    >
+                </div>
             </div>
+            <p class="error">{{ $message }}</p>
     
             <select name="category_id" id="category">
                     <option value="{{ $cat->id }}">{{ $cat->name }}</option>
