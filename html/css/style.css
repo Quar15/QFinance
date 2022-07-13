@@ -10,6 +10,9 @@
     --sky-color:#E4E9F7;
     --light-black:#1d1b31;
     --gray-color:#c7c7c7;
+    --dark-gray:#7c7c7c;
+    --error-color: #ce0000;
+    --darker-green: #00Ce00;
 }
 
 body{
@@ -109,7 +112,7 @@ nav .profile-box .profile{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
 nav .profile-box .profile h3{
@@ -122,4 +125,29 @@ nav .profile-box a{
     font-size: 20px;
     height: 20px;
     width: 20px;
+}
+
+nav .profile-box form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .profile-box .logout button{
+    color: var(--white-color);
+    background: none;
+    border: none;
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+nav .profile-box .logout button:hover{
+    cursor: pointer;
+    color: var(--gray-color);
+}
+
+.error{
+    color: var(--error-color);
+    font-size: 13px;
 }
