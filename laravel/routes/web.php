@@ -24,6 +24,8 @@ Route::get('/', function () {
 
 /* Only for logged in users */
 Route::get('/dashboard', [ItemController::class, 'dashboard'])->middleware('auth');
+Route::post('/item/add', [ItemController::class, 'add'])->middleware('auth');
+Route::post('/item/update', [ItemController::class, 'update'])->middleware('auth');
 Route::get('/stats', [ItemController::class, 'stats'])->middleware('auth');
 Route::get('/history', [ItemController::class, 'history'])->middleware('auth');
 

@@ -3,6 +3,7 @@
 @section('styles')
 
     <link rel="stylesheet" href="./css/style-dashboard.css">
+    <link rel="stylesheet" href="./css/style-popup.css">
     <script src="./js/jquery.min.js"></script>
 
 @endsection
@@ -42,7 +43,7 @@
 
             @if( $items->count() > 0 )
                 @foreach($items as $item)
-                    <tr>
+                    <tr onclick="UpdateForm({{ $item->id }}, '/item/update', 'Edit', '{{ $item->title }}', {{ number_format($item->value, 2, '.', ' ') }}, {{ $item->category->id }})">
                         <td>{{ $item->title }}</td>
                         <td>{{ $item->category->name }}</td>
                         <td>{{ $item->created_at->format('d-m-Y') }}</td>
@@ -50,11 +51,15 @@
                     </tr>
                 @endforeach
             @endif
-
         </table>
+        <button id="add-new-item" onclick="UpdateForm(-1, '/item/add', 'Add' , '', '')"><i class='bx bx-plus-medical'></i></button>
     </main>
+
+    <x-item-popup :categories="$categories" />
+
 @endsection
 
 @section('end')
     <script src="./js/table-header.js"></script>
+    <script src="./js/item-popup.js"></script>
 @endsection

@@ -10,6 +10,9 @@
     --sky-color:#E4E9F7;
     --light-black:#1d1b31;
     --gray-color:#c7c7c7;
+    --dark-gray:#7c7c7c;
+    --error-color: #ce0000;
+    --darker-green: #00Ce00;
 }
 
 body{
@@ -142,4 +145,9 @@ nav .profile-box .logout button{
 nav .profile-box .logout button:hover{
     cursor: pointer;
     color: var(--gray-color);
+}
+
+.error{
+    color: var(--error-color);
+    font-size: 13px;
 }

@@ -1,0 +1,91 @@
+.item-panel-popup{
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--black-color);
+    color: var(--white-color);
+    height: 400px;
+    width: 600px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.5s ease-in-out;
+}
+
+.item-panel-popup #close-popup{
+    height: 30px;
+    width: 30px;
+    margin: -10px 20px;
+    padding: -10px;
+    align-self: flex-end;
+    font-size: 30px;
+}
+
+.item-panel-popup #close-popup:hover{
+    cursor: pointer;
+    color: var(--gray-color);
+}
+
+.item-panel-popup.active{
+    top: 50%;
+    left: 50%;
+}
+
+.item-panel-popup h2{
+    margin-bottom: 30px;
+}
+
+.item-panel-popup form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-panel-popup form input, .item-panel-popup form select{
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.item-panel-popup form select{
+    width: 200px;
+    margin: 10px 0;
+}
+
+.item-panel-popup form select:hover{
+    cursor: pointer;
+}
+
+.item-panel-popup form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.item-panel-popup form input[type='text']{
+    width: 500px;
+}
+
+.item-panel-popup form input[type='number']{
+    width: 100px;
+}
+
+.item-panel-popup form button{
+    padding: 15px 25px;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--green-color);
+    border-radius: 13px;
+    border: none;
+}
+
+.item-panel-popup form button:hover{
+    cursor: pointer;
+    background-color: var(--darker-green);
+}

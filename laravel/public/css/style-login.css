@@ -1,7 +1,3 @@
-:root{
-    --error-color:#ce1f00;
-}
-
 .wrapper{
     top: 50%;
     left: 50%;
@@ -32,11 +28,6 @@
     border: none;
     border-radius: 3px;
     margin: 5px;
-}
-
-.wrapper form .error{
-    color: var(--error-color);
-    font-size: 13px;
 }
 
 .wrapper form button{
